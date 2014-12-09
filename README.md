@@ -1,6 +1,6 @@
 #backstage-client
 
-This repository was based on the one created by [Tsuru team](https://github.com/tsuru/homebrew-tsuru).
+This repository is based on the one created by [Tsuru team](https://github.com/tsuru/homebrew-tsuru).
 
 ##Usage
 
@@ -11,3 +11,7 @@ First, add this tap:
 Then install the desired formula:
 
 	% brew install backstage
+
+If you want to uninstall the backstage command line from your computer:
+
+	% brew uninstall backstage
