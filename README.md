@@ -11,3 +11,7 @@ First, add this tap:
 Then install the desired formula:
 
 	% brew install backstage
+
+If you want to uninstall the backstage command line from your computer:
+
+	% brew uninstall backstage
