@@ -1,6 +1,6 @@
 #backstage-client
 
-This repository was based on the one created by [Tsuru team](https://github.com/tsuru/homebrew-tsuru).
+This repository is based on the one created by [Tsuru team](https://github.com/tsuru/homebrew-tsuru).
 
 ##Usage
 
