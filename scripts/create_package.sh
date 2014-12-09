@@ -2,6 +2,10 @@
 
 # This script builds and uploads backstage's client to Github.
 #
+#   You need to export one environment variable called GITHUB_TOKEN.
+#   You should be able to create one token at https://github.com/settings/applications
+#   This script assumes that you have github-release installed (https://github.com/aktau/github-release).
+#
 # Usage:
 #
 #   % ./create-package.sh
@@ -22,16 +26,16 @@ function download {
 }
 
 function get_version {
-    GOPATH=/tmp/backstage-client go build -o backstage github.com/backstage/backstage-client/backstage
-    echo $(./backstage --version | awk '{print $3}' | sed -e 's/\.$//')
+  GOPATH=/tmp/backstage-client go build -o backstage github.com/backstage/backstage-client/backstage
+  echo $(./backstage --version | awk '{print $3}' | sed -e 's/\.$//')
 	rm backstage
 }
 
 function package {
-    echo -n "Creating package... "
+  echo -n "Creating package... "
 	pushd /tmp/backstage-client
-    tar -czf $1 *
-    shasum -a 256 $1
+  tar -czf $1 *
+  shasum -a 256 $1
 	popd
 }
 
@@ -44,4 +48,8 @@ client_version=$(get_version)
 package ${destination_dir}/backstage-client-${client_version}.tar.gz
 
 rm -rf /tmp/backstage-client
-cd /tmp
+cd ${destination_dir}
+
+echo -n "Uploading file to Github... "
+github-release release --security-token $GITHUB_TOKEN --user backstage --repo backstage-client --tag ${client_version} --pre-release
+github-release upload --security-token $GITHUB_TOKEN --user backstage --repo backstage-client --tag ${client_version} --name backstage-client-${client_version} --file backstage-client-${client_version}.tar.gz
