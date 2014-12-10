@@ -44,7 +44,7 @@ function update_formula {
     echo -n "Updating and tagging formula..."
     file_path=${destination_dir}/$1
     sha=$(shasum -a 256 ${file_path}|awk -F' ' '{ print $1}')
-    github_link=$(echo "https://github.com/backstage/backstage-client/releases/download/$2/$1" | sed 's/\//\\\//g')
+    github_link=$(echo "https://github.com/backstage/backstage-client/releases/download/$2/$1" | sed 's/\//\\\//g'| awk -F ".tar.gz" '{print $1}')
     sed -i "" "s/url '.*'/url '${github_link}'/g" ${current_path}/../Formula/backstage.rb
     sed -i "" "s/sha256 '.*'/sha256 '${sha}'/g" ${current_path}/../Formula/backstage.rb
     echo "ok"
