@@ -34,7 +34,7 @@ function get_version {
 function package {
     echo -n "Creating package... "
     pushd /tmp/backstage-client
-    tar -czf ${destination_dir}/$1 *
+    tar -czf $1 *
     shasum -a 256 $1
     popd
     echo "ok"
@@ -55,8 +55,8 @@ mkdir -p $destination_dir
 echo "ok"
 
 download
-package backstage-client-${client_version}.tar.gz
 client_version=$(get_version)
+package ${destination_dir}/backstage-client-${client_version}.tar.gz
 
 cd ${destination_dir}
 
