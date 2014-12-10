@@ -2,8 +2,8 @@ require 'formula'
 
 class Backstage < Formula
   homepage 'https://github.com/backstage'
-  url 'https://github.com/backstage/backstage-client/releases/download/0.0.1/backstage-client-0.0.1.tar.gz'
-  sha256 '44f294277c5dbad0d0fde79a3ddc076bc046bebc07fcf27c503f5baa7bc53744'
+  url 'https://github.com/backstage/backstage-client/releases/download/0.0.3/backstage-client-0.0.3.tar.gz'
+  sha256 '30d8edef91f78f838c644bc3c79cc940fa883799cb4ae3be616aa6246f7330f6'
 
   depends_on 'go'
 
