@@ -3,7 +3,7 @@ require 'formula'
 class Backstage < Formula
   homepage 'https://github.com/backstage'
   url 'https://github.com/backstage/backstage-client/releases/download/0.0.7/backstage-client-0.0.7'
-  sha256 'b0f5106316e2e89f54eb6514ea85be5180bdff6b93c1d446f28b895931c7c2b0'
+  sha256 '3433333ce9146b6d45c2af656f7c6e71be74f3c880cc68891b49326a604e0f61'
 
   depends_on 'go'
 
