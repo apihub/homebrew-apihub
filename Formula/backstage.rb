@@ -11,5 +11,7 @@ class Backstage < Formula
     mkdir_p "src/github.com/backstage/backstage-client"
     system "bash", "-c", "GOPATH=\"$PWD\" go build -o backstage github.com/backstage/backstage-client/backstage"
     bin.install "backstage"
+    bash_completion.install "src/github.com/backstage/backstage-client/commands/autocomplete/bash_autocomplete" => "backstage"
+    zsh_completion.install "src/github.com/backstage/backstage-client/commands/autocomplete/zsh_autocomplete" => "backstage"
   end
 end
