@@ -1,4 +1,4 @@
-#backstage-client
+#apihub-cli
 
 This repository is based on the one created by [Tsuru team](https://github.com/tsuru/homebrew-tsuru).
 
@@ -6,15 +6,15 @@ This repository is based on the one created by [Tsuru team](https://github.com/t
 
 First, add this tap:
 
-	% brew tap backstage/homebrew-backstage
+	% brew tap apihub/homebrew-apihub
 
 Then install the desired formula:
 
-	% brew install backstage
+	% brew install apihub
 
-If you want to uninstall the backstage command line from your computer:
+If you want to uninstall the apihub command line from your computer:
 
-	% brew uninstall backstage
+	% brew uninstall apihub
 
 ##Publish a new version
 
@@ -29,7 +29,7 @@ If you want to uninstall the backstage command line from your computer:
 The output looks like the following:
 
 	Creating "/tmp/dist-src" directory... ok
-	Downloading backstage-client source... ok
+	Downloading apihub-cli source... ok
 	Restoring dependencies... ok
 	Creating package...ok
 	Uploading file to Github...ok
