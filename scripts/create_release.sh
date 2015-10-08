@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-# This script builds and uploads apihub's client to Github.
+# This script builds and uploads apihub's cli to Github.
 #
 #   You need to export one environment variable called GITHUB_TOKEN.
 #   You should be able to create one token at https://github.com/settings/applications
@@ -55,16 +55,16 @@ mkdir -p $destination_dir
 echo "ok"
 
 download
-client_version=$(get_version)
-package ${destination_dir}/apihub-cli-${client_version}.tar.gz
+cli_version=$(get_version)
+package ${destination_dir}/apihub-cli-${cli_version}.tar.gz
 
 cd ${destination_dir}
 
 echo -n "Uploading file to Github... "
-github-release release --security-token $GITHUB_TOKEN --user apihub --repo apihub-cli --tag ${client_version} --pre-release
-github-release upload --security-token $GITHUB_TOKEN --user apihub --repo apihub-cli --tag ${client_version} --name apihub-cli-${client_version} --file apihub-cli-${client_version}.tar.gz
+github-release release --security-token $GITHUB_TOKEN --user apihub --repo apihub-cli --tag ${cli_version} --pre-release
+github-release upload --security-token $GITHUB_TOKEN --user apihub --repo apihub-cli --tag ${cli_version} --name apihub-cli-${cli_version} --file apihub-cli-${cli_version}.tar.gz
 echo "ok"
-update_formula apihub-cli-${client_version}.tar.gz ${client_version}
+update_formula apihub-cli-${cli_version}.tar.gz ${cli_version}
 
 echo -n "Removing temporary folder..."
 rm -rf /tmp/apihub-cli
@@ -72,6 +72,6 @@ echo "ok"
 
 echo -n "Generating tag and commiting..."
 cd ${current_path}/..
-git commit -am ${client_version}
-git tag ${client_version}
+git commit -am ${cli_version}
+git tag ${cli_version}
 echo "ok"

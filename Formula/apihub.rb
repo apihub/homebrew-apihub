@@ -11,7 +11,5 @@ class ApiHub < Formula
     mkdir_p "src/github.com/apihub/apihub-cli"
     system "bash", "-c", "GOPATH=\"$PWD\" go build -o apihub github.com/apihub/apihub-cli/apihub"
     bin.install "apihub"
-    bash_completion.install "src/github.com/apihub/apihub-cli/commands/autocomplete/bash_autocomplete" => "apihub"
-    zsh_completion.install "src/github.com/apihub/apihub-cli/commands/autocomplete/zsh_autocomplete" => "apihub"
   end
 end
