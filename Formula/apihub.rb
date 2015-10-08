@@ -2,8 +2,8 @@ require 'formula'
 
 class Apihub < Formula
   homepage 'https://github.com/apihub'
-  url 'https://github.com/apihub/apihub-cli/releases/download/0.0.10/apihub-cli-0.0.10'
-  sha256 '65dd489b084b8f64681f192c01e8dc1e6ae6cd83d7654be582a0b3b85738bb52'
+  url 'https://github.com/apihub/apihub-cli/releases/download/0.0.11/apihub-cli-0.0.11'
+  sha256 '8cc513984a6c49e773b0b7d1a6167061da00a8c2c21524ddd6a5d680b19471b8'
 
   depends_on 'go'
 
