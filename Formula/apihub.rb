@@ -9,7 +9,7 @@ class Apihub < Formula
 
   def install
     mkdir_p "src/github.com/apihub/apihub-cli"
-    system "bash", "-c", "GOPATH=\"$PWD\" go build -o apihub github.com/apihub/apihub-cli/apihub"
+    system "bash", "-c", "GOPATH=\"$PWD\" go build -o apihub github.com/apihub/apihub-cli"
     bin.install "apihub"
   end
 end
