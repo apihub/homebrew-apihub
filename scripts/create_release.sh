@@ -26,7 +26,7 @@ function download {
 }
 
 function get_version {
-    GOPATH=/tmp/apihub-cli go build -o apihub github.com/apihub/apihub-cli/apihub
+    GOPATH=/tmp/apihub-cli go build -o apihub github.com/apihub/apihub-cli
     echo $(./apihub --version | awk '{print $3}' | sed -e 's/\.$//')
     rm apihub
 }
